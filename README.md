@@ -12,6 +12,25 @@
     
     Dependencies: libusb
 
+## program usage
+
+    Razer BlackWidow Macro Keys v1
+    Razer BlackWidow Device Found
+    Sending data:
+     00 00 00 00 00 02 00 04
+     02 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     00 00 00 00 00 00 00 00
+     04 00
+    Transmitted: 90
+
 ## notes
 
 BlackWidow Keyboards do not have any onboard memory for macros Razer use software for macro functionality in windows.
