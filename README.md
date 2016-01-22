@@ -39,6 +39,8 @@ You can however use 'xmacro' in linux
 
 You can also use xmodmap or your WM to allocate functions to the macro key keycodes.
 
+To find all Razer devices you can use: `lsusb -d 1532:`
+
 ## keycode reference
 
 * M1 = 191
