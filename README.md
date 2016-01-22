@@ -46,3 +46,8 @@ You can also use xmodmap or your WM to allocate functions to the macro key keyco
 * M3 = 193
 * M4 = 194
 * M5 = 195
+
+## todo
+
+* extract all known device id's of blackwidow keyboards from the Razer propietary drivers
+* add more blackwidow device id's
