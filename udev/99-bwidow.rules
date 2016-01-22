@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="011b", RUN+="/usr/bin/bwidow"
