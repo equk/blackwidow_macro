@@ -41,6 +41,14 @@ You can also use xmodmap or your WM to allocate functions to the macro key keyco
 
 To find all Razer devices you can use: `lsusb -d 1532:`
 
+## extending
+
+I have added a sample udev rule to udev/99-bwidow.rules which can be placed into /usr/lib/udev/rules.d/99-bwidow.rules
+
+To install this you can do `make udev`
+
+To remove you can do `make rmudev`
+
 ## keycode reference
 
 * M1 = 191
