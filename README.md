@@ -45,7 +45,7 @@ To find all Razer devices you can use: `lsusb -d 1532:`
 
 I have added a sample udev rule to udev/99-bwidow.rules which can be placed into /usr/lib/udev/rules.d/99-bwidow.rules
 
-To install this you can do `make udev`
+To install this you can do `make cpudev`
 
 To remove you can do `make rmudev`
 

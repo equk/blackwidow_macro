@@ -11,7 +11,7 @@ uninstall:
 clean:
 	rm bin/bwidow
 
-udev:
+cpudev:
 	cp udev/99-bwidow.rules /usr/lib/udev/rules.d/99-bwidow.rules
 
 rmudev:
