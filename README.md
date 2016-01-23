@@ -2,15 +2,15 @@
 
 # blackwidow_macro
 
-    Razer BlackWidow Macro Keys Enabler
-    Copyright (C) 2016 B.Walden
+Razer BlackWidow Macro Keys Enabler
 
-    This program sends a init packet used by Razer proprietary drivers
-    to initialize the 'Macro' keys on Razer BlackWidow keyboards.
+Copyright (C) 2016 B.Walden
 
-    License: MIT (LICENSE file should be included with source)
-    
-    Dependencies: [libusb](http://libusb.info/)
+This program sends a init packet used by Razer proprietary drivers to initialize the 'Macro' keys on Razer BlackWidow keyboards.
+
+License: MIT (LICENSE file should be included with source)
+
+Dependencies: [libusb](http://libusb.info/)
 
 ## program usage
 
