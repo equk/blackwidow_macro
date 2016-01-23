@@ -59,5 +59,5 @@ To remove you can do `make rmudev`
 
 ## todo
 
-* extract all known device id's of blackwidow keyboards from the Razer propietary drivers
+* extract all known device id's of blackwidow keyboards from the Razer proprietary drivers
 * add more blackwidow device id's
