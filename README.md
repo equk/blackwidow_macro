@@ -10,7 +10,7 @@
 
     License: MIT (LICENSE file should be included with source)
     
-    Dependencies: libusb
+    Dependencies: [libusb](http://libusb.info/)
 
 ## program usage
 
@@ -39,7 +39,7 @@ You can however use 'xmacro' in linux
 
 You can also use xmodmap or your WM to allocate functions to the macro key keycodes.
 
-To find all Razer devices you can use: `lsusb -d 1532:`
+To find all connected Razer devices you can use: `lsusb -d 1532:`
 
 ## extending
 
