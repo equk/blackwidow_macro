@@ -61,3 +61,9 @@ To remove you can do `make rmudev`
 
 * extract all known device id's of blackwidow keyboards from the Razer proprietary drivers
 * add more blackwidow device id's
+
+## related references
+
+* [Wireshark USB Capture Setup](https://wiki.wireshark.org/CaptureSetup/USB)
+* [libusb on github](https://github.com/libusb/libusb)
+* [libusb wiki on github](https://github.com/libusb/libusb/wiki)
