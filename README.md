@@ -67,3 +67,15 @@ To remove you can do `make rmudev`
 * [Wireshark USB Capture Setup](https://wiki.wireshark.org/CaptureSetup/USB)
 * [libusb on github](https://github.com/libusb/libusb)
 * [libusb wiki on github](https://github.com/libusb/libusb/wiki)
+
+## razer windows drivers
+
+Device IDs taken from Razer BlackWidow drivers
+
+    Razer010D.DeviceDesc     = "Razer BlackWidow Ultimate"
+    Razer010E.DeviceDesc     = "Razer BlackWidow"
+    Razer011B.DeviceDesc     = "Razer BlackWidow 2013"
+
+    %Razer010D.DeviceDesc%=Razer, HID\Vid_1532&Pid_010D&MI_00
+    %Razer010E.DeviceDesc%=Razer, HID\Vid_1532&Pid_010E&MI_00
+    %Razer011B.DeviceDesc%=Razer, HID\Vid_1532&Pid_011B&MI_00
