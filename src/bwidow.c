@@ -22,19 +22,22 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Device IDs
-#define DEV_VID 0x1532      //Razer
-#define DEV_PID 0x011b      //Blackwidow 2013
+// vendor_id = Razer
+#define DEV_VID 0x1532
+// product_id of known blackwidow devices
+#define DEV_PID_BW_2013 0x011b
+#define DEV_PID_BW_ULT 0x010d
+#define DEV_PID_BW 0x010e
 
 // USB Device
 #define DEV_INTF 2
 
 // Version
-#define VERSION 1
+const char * BWIDOW_VERSION = "1.1";
 
 // Blackwidow M Key Init Code
-unsigned char Blackwidow_Init[90] =
-{
+ unsigned char Blackwidow_Init[90] =
+ {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x04,
     0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -59,11 +62,26 @@ int init () {
     libusb_set_debug(NULL, 3);
 
     // Open device based on vender & pid
-    handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID);
+    handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_2013);
     if (handle == NULL) {
-        printf("ERROR - Device Not Found");
+        // try next device
+        handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_ULT);
+        if (handle == NULL) {
+            //try next device
+            handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW);
+            if (handle == NULL) {
+            //no devices found
+                printf("ERROR - No Known Razer BlackWidow Devices Found\n");
+                libusb_exit(NULL);
+                return 1;
+            } else {
+                printf("Razer BlackWidow Device Found\n");
+            }
+        } else {
+            printf("Razer BlackWidow Ultimate Device Found\n");
+        }
     } else {
-        printf("Razer BlackWidow Device Found\n");
+        printf("Razer BlackWidow 2013 Device Found\n");
     }
 
     // Detaching libusb kernel driver
@@ -134,7 +152,7 @@ int scanArgs (char* arg, char* argv[], int argc) {
 
 // Main
 int main (int argc, char * argv[]) {
-    printf("Razer BlackWidow Macro Keys v%d\n", VERSION);
+    printf("Razer BlackWidow Macro Keys v%s\n", BWIDOW_VERSION);
 
     if ( argc<2 )
     {
