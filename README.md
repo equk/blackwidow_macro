@@ -57,10 +57,18 @@ To remove you can do `make rmudev`
 * M4 = 194
 * M5 = 195
 
+## device id's included
+
+    010D = "Razer BlackWidow Ultimate"
+    010E = "Razer BlackWidow"
+    011B = "Razer BlackWidow 2013"
+
+If anyone wants me to add any more please tell me so I can add them in.
+
 ## todo
 
-* extract all known device id's of blackwidow keyboards from the Razer proprietary drivers
-* add more blackwidow device id's
+* ~~extract all known device id's of blackwidow keyboards from the Razer proprietary drivers~~
+* ~~add more blackwidow device id's~~
 
 ## related references
 
