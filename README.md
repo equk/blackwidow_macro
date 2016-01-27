@@ -14,8 +14,8 @@ Dependencies: [libusb](http://libusb.info/)
 
 ## program usage
 
-    Razer BlackWidow Macro Keys v1
-    Razer BlackWidow Device Found
+    Razer BlackWidow Macro Keys v1.1
+    Razer BlackWidow 2013 Device Found
     Sending data:
      00 00 00 00 00 02 00 04
      02 00 00 00 00 00 00 00
