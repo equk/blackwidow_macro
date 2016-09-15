@@ -36,8 +36,8 @@
 const char * BWIDOW_VERSION = "1.1";
 
 // Blackwidow M Key Init Code
- unsigned char Blackwidow_Init[90] =
- {
+unsigned char Blackwidow_Init[90] =
+{
     0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00, 0x04,
     0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -87,7 +87,7 @@ int init () {
     // Detaching libusb kernel driver
     if (libusb_kernel_driver_active(handle,DEV_INTF))
         libusb_detach_kernel_driver(handle, DEV_INTF);
-    
+
     // Give feedback & quit on error
     if (libusb_claim_interface(handle, DEV_INTF) < 0) {
         printf("IO Error Opening USB Device\n");
@@ -95,7 +95,7 @@ int init () {
         libusb_exit(NULL);
         return 1;
     }
-    
+
     return 0;
 }
 
