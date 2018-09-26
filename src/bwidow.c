@@ -59,7 +59,12 @@ int send_init = 0;
 // Initialize libusb
 int init () {
     libusb_init(NULL);
+
+#if LIBUSB_API_VERSION >= 0x01000106
+    libusb_set_option(NULL, LIBUSB_OPTION_LOG_LEVEL, 3);
+#else
     libusb_set_debug(NULL, 3);
+#endif
 
     // Open device based on vender & pid
     handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_2013);
