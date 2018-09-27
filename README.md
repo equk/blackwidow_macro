@@ -12,9 +12,9 @@ License: MIT (LICENSE file should be included with source)
 
 Dependencies: [libusb](http://libusb.info/)
 
-## program usage
+## Usage
 
-    Razer BlackWidow Macro Keys v1.1
+    Razer BlackWidow Macro Keys v1.2
     Razer BlackWidow 2013 Device Found
     Sending data:
      00 00 00 00 00 02 00 04
@@ -31,33 +31,33 @@ Dependencies: [libusb](http://libusb.info/)
      04 00
     Transmitted: 90
 
-## notes
+## Notes
 
 BlackWidow Keyboards do not have any onboard memory for macros Razer use software for macro functionality in windows.
 
-You can however use 'xmacro' in linux
+You can however use `xmacro` in linux
 
 You can also use xmodmap or your WM to allocate functions to the macro key keycodes.
 
 To find all connected Razer devices you can use: `lsusb -d 1532:`
 
-## extending
+## Extending
 
-I have added a sample udev rule to udev/99-bwidow.rules which can be placed into /usr/lib/udev/rules.d/99-bwidow.rules
+I have added a sample udev rule to `udev/99-bwidow.rules` which can be placed into `/usr/lib/udev/rules.d/99-bwidow.rules`
 
 To install this you can do `make cpudev`
 
 To remove you can do `make rmudev`
 
-## keycode reference
+### Keycode Reference
 
-* M1 = 191
-* M2 = 192
-* M3 = 193
-* M4 = 194
-* M5 = 195
+    M1 = 191
+    M2 = 192
+    M3 = 193
+    M4 = 194
+    M5 = 195
 
-## device id's included
+### device id's included
 
     010D = "Razer BlackWidow Ultimate"
     010E = "Razer BlackWidow"
@@ -65,18 +65,18 @@ To remove you can do `make rmudev`
 
 If anyone wants me to add any more please tell me so I can add them in.
 
-## todo
+### todo
 
 * ~~extract all known device id's of blackwidow keyboards from the Razer proprietary drivers~~
 * ~~add more blackwidow device id's~~
 
-## related references
+### related references
 
 * [Wireshark USB Capture Setup](https://wiki.wireshark.org/CaptureSetup/USB)
 * [libusb on github](https://github.com/libusb/libusb)
 * [libusb wiki on github](https://github.com/libusb/libusb/wiki)
 
-## razer windows drivers
+### razer windows drivers
 
 Device IDs taken from Razer BlackWidow drivers
 
