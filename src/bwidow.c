@@ -33,7 +33,7 @@
 #define DEV_INTF 2
 
 // Version
-const char * BWIDOW_VERSION = "1.1";
+const char * BWIDOW_VERSION = "1.2";
 
 // Blackwidow M Key Init Code
 unsigned char Blackwidow_Init[90] =
@@ -60,6 +60,7 @@ int send_init = 0;
 int init () {
     libusb_init(NULL);
 
+// libusb_set_debug replaced with libusb_set_option in libusb 1.0.22
 #if LIBUSB_API_VERSION >= 0x01000106
     libusb_set_option(NULL, LIBUSB_OPTION_LOG_LEVEL, 3);
 #else
