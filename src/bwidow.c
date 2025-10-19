@@ -27,6 +27,7 @@
 // product_id of known blackwidow devices
 #define DEV_PID_BW_2013 0x011b
 #define DEV_PID_BW_ULT 0x010d
+#define DEV_PID_BW_ULT_2014 0x011a
 #define DEV_PID_BW 0x010e
 #define DEV_PID_BW_CHROMA_V2 0x0221
 
@@ -74,21 +75,27 @@ int init () {
         // try next device
         handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_ULT);
         if (handle == NULL) {
-            //try next device
-            handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW);
+            // try next device
+            handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_ULT_2014);
             if (handle == NULL) {
                 //try next device
-                handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_CHROMA_V2);
-                if(handle == NULL){
-                    //no devices found
-                    printf("ERROR - No Known Razer BlackWidow Devices Found\n");
-                    libusb_exit(NULL);
-                    return 1;
+                handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW);
+                if (handle == NULL) {
+                    //try next device
+                    handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_CHROMA_V2);
+                    if(handle == NULL){
+                        //no devices found
+                        printf("ERROR - No Known Razer BlackWidow Devices Found\n");
+                        libusb_exit(NULL);
+                        return 1;
+                    } else {
+                        printf("Razer BlackWidow Chroma V2 Devide Found\n");
+                    }
                 } else {
-                    printf("Razer BlackWidow Chroma V2 Devide Found\n");
+                    printf("Razer BlackWidow Device Found\n");
                 }
             } else {
-                printf("Razer BlackWidow Device Found\n");
+                printf("Razer BlackWidow Ultimate 2014 Device Found\n");
             }
         } else {
             printf("Razer BlackWidow Ultimate Device Found\n");
