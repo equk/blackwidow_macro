@@ -1,4 +1,5 @@
 bwidow: src/bwidow.c
+	mkdir bin
 	gcc -std=gnu99 src/bwidow.c -lusb-1.0 -o bin/bwidow
 
 install: bwidow
