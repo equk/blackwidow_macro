@@ -28,6 +28,7 @@
 #define DEV_PID_BW_2013 0x011b
 #define DEV_PID_BW_ULT 0x010d
 #define DEV_PID_BW 0x010e
+#define DEV_PID_BW_CHROMA_V2 0x0221
 
 // USB Device
 #define DEV_INTF 2
@@ -76,10 +77,16 @@ int init () {
             //try next device
             handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW);
             if (handle == NULL) {
-            //no devices found
-                printf("ERROR - No Known Razer BlackWidow Devices Found\n");
-                libusb_exit(NULL);
-                return 1;
+                //try next device
+                handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_CHROMA_V2);
+                if(handle == NULL){
+                    //no devices found
+                    printf("ERROR - No Known Razer BlackWidow Devices Found\n");
+                    libusb_exit(NULL);
+                    return 1;
+                } else {
+                    printf("Razer BlackWidow Chroma V2 Devide Found\n");
+                }
             } else {
                 printf("Razer BlackWidow Device Found\n");
             }
