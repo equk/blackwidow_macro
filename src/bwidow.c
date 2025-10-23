@@ -110,31 +110,37 @@ int sendcmd(unsigned char *data, struct libusb_device_handle *handle)
     int res;
     res = libusb_control_transfer(handle, LIBUSB_REQUEST_TYPE_CLASS, 0x9, 0x300, 0, data, 90, 1000);
 
-    if (verbose) {
+    if (verbose)
+    {
         printf("Transmitted: %d\n", res);
     }
+
     return res;
 }
 
 // Console argument parsing
-int scanArgs (char* arg, char* argv[], int argc) {
+int scanArgs(char *arg, char *argv[], int argc)
+{
     int i = 0;
-    for (i = 1; i < argc; i++) {
-        if (strcmp(arg, argv[i]) == 0) {
+    for (i = 1; i < argc; i++)
+    {
+        if (strcmp(arg, argv[i]) == 0)
+        {
             return i;
         }
     }
     return 0;
 }
 
-// Main
-int main (int argc, char * argv[]) {
+int main(int argc, char *argv[])
+{
+
     printf("Razer BlackWidow Macro Keys v%s\n", BWIDOW_VERSION);
 
-    if ( argc<2 )
+    if (argc < 2)
     {
         // Show Help Banner If No Args Given
-        printf("\nUsage: %s <arg>\n",argv[0]);
+        printf("\nUsage: %s <arg>\n", argv[0]);
         printf("\nArguments:\n \t-s\tsend init packet\n");
         printf("\t-v\tshow verbose output\n");
         printf("\nNote: This script requires root access for kernel driver\n");
@@ -143,15 +149,15 @@ int main (int argc, char * argv[]) {
     else
     {
 
-        if (init() != 0) return 1;
-
         // Verbose mode
-        if (scanArgs("-v", argv, argc)) {
+        if (scanArgs("-v", argv, argc))
+        {
             verbose = 1;
         }
 
-        // Send Button Init Command
-        if (scanArgs("-s", argv, argc)){
+        // Send Macro Init Command
+        if (scanArgs("-s", argv, argc))
+        {
             send_init = 1;
         }
 
