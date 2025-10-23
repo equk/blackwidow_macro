@@ -99,16 +99,16 @@ void printData(unsigned char *data)
 }
 
 // Send data to USB
-int sendcmd (unsigned char * data) {
-    if (verbose) {
+int sendcmd(unsigned char *data, struct libusb_device_handle *handle)
+{
+    if (verbose)
+    {
         printf("Sending data:\n");
         printData(data);
     }
 
     int res;
-    res = libusb_control_transfer(handle,
-        LIBUSB_REQUEST_TYPE_CLASS,
-        0x9, 0x300, 0, data, 90, 1000);
+    res = libusb_control_transfer(handle, LIBUSB_REQUEST_TYPE_CLASS, 0x9, 0x300, 0, data, 90, 1000);
 
     if (verbose) {
         printf("Transmitted: %d\n", res);
