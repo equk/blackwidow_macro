@@ -1,5 +1,3 @@
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](http://badges.mit-license.org)
-
 # blackwidow_macro
 
 Razer BlackWidow Macro Keys Enabler
@@ -75,7 +73,7 @@ To remove you can do `make rmudev`
     M4 = 194
     M5 = 195
 
-### device id's included
+### Devices Included
 
     010D = "Razer BlackWidow Ultimate"
     010E = "Razer BlackWidow"
@@ -85,18 +83,13 @@ To remove you can do `make rmudev`
 
 If anyone wants me to add any more please tell me so I can add them in.
 
-### todo
-
-* ~~extract all known device id's of blackwidow keyboards from the Razer proprietary drivers~~
-* ~~add more blackwidow device id's~~
-
-### related references
+### Related References
 
 * [Wireshark USB Capture Setup](https://wiki.wireshark.org/CaptureSetup/USB)
 * [libusb on github](https://github.com/libusb/libusb)
 * [libusb wiki on github](https://github.com/libusb/libusb/wiki)
 
-### razer windows drivers
+### Razer Windows Drivers
 
 Device IDs taken from Razer BlackWidow drivers
 
@@ -107,3 +100,15 @@ Device IDs taken from Razer BlackWidow drivers
     %Razer010D.DeviceDesc%=Razer, HID\Vid_1532&Pid_010D&MI_00
     %Razer010E.DeviceDesc%=Razer, HID\Vid_1532&Pid_010E&MI_00
     %Razer011B.DeviceDesc%=Razer, HID\Vid_1532&Pid_011B&MI_00
+
+# Contact
+
+Website: https://equk.co.uk
+
+Mastodon: [@equilibriumuk@hachyderm.io](https://hachyderm.io/@equilibriumuk)
+
+Bluesky: [@equilibriumuk.bsky.social](https://bsky.app/profile/equilibriumuk.bsky.social)
+
+# License
+
+MIT License
