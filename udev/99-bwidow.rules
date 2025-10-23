@@ -3,3 +3,4 @@ SUBSYSTEM=="usb", ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATT
 SUBSYSTEM=="usb", ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="010e", RUN+="/usr/bin/bwidow -s"
 SUBSYSTEM=="usb", ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0221", RUN+="/usr/bin/bwidow -s"
 SUBSYSTEM=="usb", ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0203", RUN+="/usr/bin/bwidow -s"
+SUBSYSTEM=="usb", ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="011a", RUN+="/usr/bin/bwidow -s"

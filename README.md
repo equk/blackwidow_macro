@@ -80,6 +80,7 @@ To remove you can do `make rmudev`
     011B = "Razer BlackWidow 2013"
     0203 = "Razer BlackWidow Chroma"
     0221 = "Razer BlackWidow Chroma V2"
+    011A = "Razer BlackWidow Ultimate 2014"
 
 If anyone wants me to add any more please tell me so I can add them in.
 
