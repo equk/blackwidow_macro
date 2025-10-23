@@ -74,10 +74,13 @@ struct libusb_device_handle *usb_init(struct libusb_context *context, int venid,
     return handle;
 }
 
-void closeHandle () {
-    libusb_release_interface(handle, DEV_INTF);
-    libusb_close(handle);
-    libusb_exit(NULL);
+// Close USB Handle
+void usb_close(struct libusb_device_handle *handle)
+{
+    if (handle != NULL)
+    {
+        libusb_close(handle);
+    }
 }
 
 void printData (unsigned char * data) {
