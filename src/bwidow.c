@@ -178,7 +178,7 @@ int main(int argc, char *argv[])
 
             int i;
 
-            for (i = 0; i < 5; i++)
+            for (i = 0; i < 6; i++)
             {
                 // DEBUG
                 // printf("[%04x:%04x]\n", vid, keyboardIds[i]);
