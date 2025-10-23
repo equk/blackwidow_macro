@@ -161,10 +161,16 @@ int main(int argc, char *argv[])
             send_init = 1;
         }
 
-        if (send_init) {
-        //Send Data
-            sendcmd(Blackwidow_Init);
-        }
+        if (send_init)
+        {
+
+            struct libusb_context *context;
+            struct libusb_device_handle *handle = NULL;
+
+            libusb_init(&context);
+            libusb_set_option(NULL, LIBUSB_OPTION_LOG_LEVEL, 3);
+
+            int vid = vendorId;
 
             int i;
 
