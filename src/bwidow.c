@@ -47,61 +47,31 @@ unsigned char Blackwidow_Init[90] =
     0x04, 0x00
 };
 
-libusb_device_handle * handle;
-int verbose = 0;
-int send_init = 0;
+// USB Device Handle
+// (check usb device connected before attempting to open connection)
+struct libusb_device_handle *usb_init(struct libusb_context *context, int venid, int devid)
+{
+    struct libusb_device **device_list;
+    struct libusb_device_handle *handle = NULL;
 
-// Initialize libusb
-int init () {
-    libusb_init(NULL);
+    int deviceCount = libusb_get_device_list(context, &device_list);
 
-// libusb_set_debug replaced with libusb_set_option in libusb 1.0.22
-#if LIBUSB_API_VERSION >= 0x01000106
-    libusb_set_option(NULL, LIBUSB_OPTION_LOG_LEVEL, 3);
-#else
-    libusb_set_debug(NULL, 3);
-#endif
-
-    // Open device based on vender & pid
-    handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_2013);
-    if (handle == NULL) {
-        // try next device
-        handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW_ULT);
-        if (handle == NULL) {
-            //try next device
-            handle = libusb_open_device_with_vid_pid(NULL, DEV_VID, DEV_PID_BW);
-            if (handle == NULL) {
-            //no devices found
-                printf("ERROR - No Known Razer BlackWidow Devices Found\n");
-                libusb_exit(NULL);
-                return 1;
-            } else {
-                printf("Razer BlackWidow Device Found\n");
-            }
-        } else {
-            printf("Razer BlackWidow Ultimate Device Found\n");
+    int i;
+    for (i = 0; i < deviceCount; i++)
+    {
+        struct libusb_device *device = device_list[i];
+        struct libusb_device_descriptor desc;
+        libusb_get_device_descriptor(device, &desc);
+        if (desc.idVendor == venid && desc.idProduct == devid)
+        {
+            libusb_open(device, &handle);
+            break;
         }
-    } else {
-        printf("Razer BlackWidow 2013 Device Found\n");
     }
 
-    // Detaching libusb kernel driver
-    if (libusb_kernel_driver_active(handle,DEV_INTF))
-        libusb_detach_kernel_driver(handle, DEV_INTF);
+    libusb_free_device_list(device_list, 1);
 
-    // Give feedback & quit on error
-    if (libusb_claim_interface(handle, DEV_INTF) < 0) {
-        printf("IO Error Opening USB Device\n");
-        libusb_close(handle);
-        libusb_exit(NULL);
-        return 1;
-    }
-
-    return 0;
-}
-
-void showBanner () {
-    printf("Usage: ./bwidow -s -v \n");
+    return handle;
 }
 
 void closeHandle () {
