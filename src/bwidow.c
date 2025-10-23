@@ -25,7 +25,7 @@
 // vendor_id = Razer
 const int vendorId = 0x1532;
 // product_id of known blackwidow devices
-const int keyboardIds[] = {0x011b, 0x010d, 0x010e, 0x0221, 0x0203};
+const int keyboardIds[] = {0x011b, 0x010d, 0x010e, 0x0221, 0x0203, 0x011a};
 
 // Version
 const char *BWIDOW_VERSION = "2.0";
