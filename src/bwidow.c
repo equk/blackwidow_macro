@@ -28,7 +28,11 @@ const int vendorId = 0x1532;
 const int keyboardIds[] = {0x011b, 0x010d, 0x010e, 0x0221, 0x0203};
 
 // Version
-const char * BWIDOW_VERSION = "1.2";
+const char *BWIDOW_VERSION = "2.0";
+
+// CLI Options
+int verbose = 0;
+int send_init = 0;
 
 // Blackwidow M Key Init Code
 unsigned char Blackwidow_Init[90] =
