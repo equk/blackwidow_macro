@@ -23,7 +23,7 @@
 #include <string.h>
 
 // vendor_id = Razer
-#define DEV_VID 0x1532
+const int vendorId = 0x1532;
 // product_id of known blackwidow devices
 #define DEV_PID_BW_2013 0x011b
 #define DEV_PID_BW_ULT 0x010d
