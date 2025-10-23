@@ -1,3 +1,8 @@
+
+$(info $(shell mkdir -p bin))
+
+all: bwidow
+
 bwidow: src/bwidow.c
 	gcc -std=gnu99 src/bwidow.c -lusb-1.0 -o bin/bwidow
 
