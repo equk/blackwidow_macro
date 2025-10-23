@@ -14,22 +14,40 @@ Dependencies: [libusb](http://libusb.info/)
 
 ## Usage
 
-    Razer BlackWidow Macro Keys v1.2
-    Razer BlackWidow 2013 Device Found
-    Sending data:
-     00 00 00 00 00 02 00 04
-     02 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     00 00 00 00 00 00 00 00
-     04 00
-    Transmitted: 90
+```sh
+Razer BlackWidow Macro Keys v2.0
+Sending Keyboard Macro Init Sequence for [1532:011b]
+
+Sending data:
+ 00 00 00 00 00 02 00 04
+ 02 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00
+ 04 00
+Transmitted: 90
+```
+
+```sh
+Arguments:
+        -s      send init packet
+        -v      show verbose output
+```
+
+## Version 2.x
+
+improvements:
+
+- [x] new libusb handle
+- [x] array of keyboard device IDs
+- [x] new cli feedback
+- [x] support for more keyboard devices
 
 ## Notes
 
@@ -62,6 +80,8 @@ To remove you can do `make rmudev`
     010D = "Razer BlackWidow Ultimate"
     010E = "Razer BlackWidow"
     011B = "Razer BlackWidow 2013"
+    0203 = "Razer BlackWidow Chroma"
+    0221 = "Razer BlackWidow Chroma V2"
 
 If anyone wants me to add any more please tell me so I can add them in.
 
