@@ -25,12 +25,7 @@
 // vendor_id = Razer
 const int vendorId = 0x1532;
 // product_id of known blackwidow devices
-#define DEV_PID_BW_2013 0x011b
-#define DEV_PID_BW_ULT 0x010d
-#define DEV_PID_BW 0x010e
-
-// USB Device
-#define DEV_INTF 2
+const int keyboardIds[] = {0x011b, 0x010d, 0x010e, 0x0221, 0x0203};
 
 // Version
 const char * BWIDOW_VERSION = "1.2";
