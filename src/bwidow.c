@@ -166,7 +166,26 @@ int main(int argc, char *argv[])
             sendcmd(Blackwidow_Init);
         }
 
-        closeHandle();
+            int i;
+
+            for (i = 0; i < 5; i++)
+            {
+                // DEBUG
+                // printf("[%04x:%04x]\n", vid, keyboardIds[i]);
+                int pid = keyboardIds[i];
+                handle = usb_init(context, vid, pid);
+                if (handle != NULL)
+                {
+                    printf("Sending Keyboard Macro Init Sequence for [%04x:%04x]\n\n", vid, pid);
+
+                    sendcmd(Blackwidow_Init, handle);
+
+                    usb_close(handle);
+                    libusb_exit(NULL);
+                }
+            }
+        }
     }
+
     return 0;
 }
