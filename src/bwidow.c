@@ -83,11 +83,14 @@ void usb_close(struct libusb_device_handle *handle)
     }
 }
 
-void printData (unsigned char * data) {
+void printData(unsigned char *data)
+{
     int k = 0;
-    for (int i = 0; i < 90; i++) {
+    for (int i = 0; i < 90; i++)
+    {
         printf(" %02x", data[i]);
-        if (k++ == 7) {
+        if (k++ == 7)
+        {
             printf("\n");
             k = 0;
         }
