@@ -38,6 +38,19 @@ Arguments:
         -v      show verbose output
 ```
 
+## Supported Devices
+
+| ID | Device Name |
+|---|---|
+| 010D | Razer BlackWidow Ultimate |
+| 010E | Razer BlackWidow |
+| 011B | Razer BlackWidow 2013 |
+| 0203 | Razer BlackWidow Chroma |
+| 0221 | Razer BlackWidow Chroma V2 |
+| 011A | Razer BlackWidow Ultimate 2014 |
+
+If anyone wants me to add any more please open a issue so I can add them in.
+
 ## Version 2.x
 
 improvements:
@@ -72,17 +85,6 @@ To remove you can do `make rmudev`
     M3 = 193
     M4 = 194
     M5 = 195
-
-### Devices Included
-
-    010D = "Razer BlackWidow Ultimate"
-    010E = "Razer BlackWidow"
-    011B = "Razer BlackWidow 2013"
-    0203 = "Razer BlackWidow Chroma"
-    0221 = "Razer BlackWidow Chroma V2"
-    011A = "Razer BlackWidow Ultimate 2014"
-
-If anyone wants me to add any more please tell me so I can add them in.
 
 ### Related References
 
