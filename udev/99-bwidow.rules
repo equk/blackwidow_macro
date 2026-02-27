@@ -4,3 +4,4 @@ ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="01
 ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0221", RUN+="/usr/bin/bwidow -s"
 ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0203", RUN+="/usr/bin/bwidow -s"
 ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="011a", RUN+="/usr/bin/bwidow -s"
+ACTION=="add", SUBSYSTEM=="input",ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0293", RUN+="/usr/bin/bwidow -s"
